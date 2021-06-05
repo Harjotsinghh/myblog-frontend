@@ -33,10 +33,11 @@ fetch("http://localhost:8080/")
 
         <div class="post-info">
             <p>${info.text}</p>
-            <a href=""> <i class="fa fa-ellipsis-h" style ="font-size: 30px; padding-right: 20px;" aria-hidden="true"></i>
-            <div class="fadeout"></div>
-            </a>
-        </div>`;
+            <a href=""><div class="fadeout"></div>READ MORE.......</a>
+        </div>
+        
+        `;
+       
 
     var newele= document.createElement('div');
     newele.classList.add("post");
