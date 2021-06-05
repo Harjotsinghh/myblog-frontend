@@ -1,0 +1,148 @@
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    padding-bottom: 100px;
+    display: flex;
+
+    justify-content: center;
+
+   
+}
+
+.backdrop{
+    
+    background-color: rgba(0, 0, 0, 0.801);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: none;
+    z-index: 11;
+    top: 0;
+
+    /* animation: ease-in-out 0.7s both 0s 2  normal; */
+}
+
+.toggle {
+    /* animation: ease 0.75s; */
+    display: block;
+}
+.posts{
+    margin: 100px 20px;
+ /* border-top: black solid 1px; */
+    min-height: 130px;
+    
+    width: 70%;
+   
+}
+.posts > h1{
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+.myfooter{
+    position: absolute;
+    height: 70px;
+    bottom: 0;
+    border-top: solid 1px black; 
+    width: 80%;
+    vertical-align: center;
+    
+
+}
+.myfooter p{
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+}
+.myfooter .info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    
+}
+.info i{
+    margin : 3px 20px;
+    color: black;
+    cursor: pointer;
+    
+}
+.post{
+    margin: 10px;
+    /* border-top: black double 1px; */
+    /* border-radius: 2px; */
+    background-color: rgba(205, 237, 247, 0.37);
+    height: 250px;
+    max-height: 400px;
+    overflow:hidden;
+    border-bottom: none;
+    margin-bottom: 30px;
+    /* box-shadow: 2px 2px 7px; */
+}
+.post-title{
+    display: flex;
+    border-bottom: 1px black solid;
+    height: 26%;
+    justify-content: center;/* border-right: 1px black; */
+}
+.post-title h1{ 
+    width: 70%;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    border-right: 1px black solid;
+    max-height: 100%;
+    margin: auto;
+    padding:10px;
+    
+}
+.post-user{
+    width: 30%;
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+}
+.post-user h3{
+    font-family: 'Barlow', sans-serif;
+    display: inline-block;
+    margin: 0;
+    padding:2px;
+   
+}
+.post-user .name{
+    height: 60%;
+    font-weight:bolder;
+    border-bottom: black 1px solid;
+
+}
+.post-user .time{
+height: 40%;
+font-weight: 20;
+overflow: auto;
+font-size: small;
+
+}
+.post-info{
+    height:74%;
+    display: flex;
+    flex-direction: column;
+}
+.post-info p{
+    overflow: hidden;
+    font-size: large;height: 70%;
+    padding:7px 10px;
+}
+.post-info a{
+    height: 30%;
+    text-align: end;
+    padding: 10px;
+    transition: background-color 0.7s ease-in;
+    text-decoration: none;
+    /* background-color: rgba(250, 234, 211, 0.37); */
+    background-image: linear-gradient(white,rgba(205, 237, 247, 0.37));
+    cursor: pointer;
+}
+
+.post-info >a:hover{
+    background-color:rgba(0, 0, 0, 0.555) ;
+    color: rgb(37, 31, 122);
+}
