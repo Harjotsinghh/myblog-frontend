@@ -12,29 +12,39 @@ body{
 
 .backdrop{
     
-    background-color: rgba(0, 0, 0, 0.801);
+   
     height: 100vh;
     width: 100vw;
     position: fixed;
     display: none;
     z-index: 11;
     top: 0;
-
+    background-color: rgba(0, 0, 0, 0.521);
+    margin-left: 100px;
     /* animation: ease-in-out 0.7s both 0s 2  normal; */
 }
 
 .toggle {
-    /* animation: ease 0.75s; */
+ 
+  margin-left: 0;
+  background-color: rgba(0, 0, 0, 0.801);
     display: block;
 }
 .posts{
     margin: 100px 20px;
+
  /* border-top: black solid 1px; */
     min-height: 130px;
     
     width: 70%;
    
 }
+.post a{
+    text-decoration: none;
+    /* box-shadow:  black 3px 3px 3px; */
+
+}
+
 .posts > h1{
     font-family: 'Barlow', sans-serif;
     text-align: center;
@@ -69,21 +79,28 @@ body{
 }
 .post{
     margin: 10px;
+    margin-bottom: 30px;
     /* border-top: black double 1px; */
-    /* border-radius: 2px; */
-    background-color: rgba(205, 237, 247, 0.37);
-    height: 250px;
+    border-radius: 5px;
+    /* background-color: rgba(205, 247, 230, 0.37); */
+    background-color: rgb(196, 224, 228);
+    background-color: rgba(86, 126, 63, 0.349);
+    height: 200px;
     max-height: 400px;
     overflow:hidden;
     border-bottom: none;
     /* position: relative; */
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     /* box-shadow: 2px 2px 7px; */
+}
+.post:hover{
+    box-shadow:  rgb(123, 117, 124) 3px -7px 10px;
+    box-decoration-break: slice;
 }
 .post-title{
     display: flex;
     border-bottom: 1px black solid;
-    height: 26%;
+    height: 30%;
     justify-content: center;/* border-right: 1px black; */
 }
 .post-title h1{ 
@@ -92,6 +109,7 @@ body{
     text-align: center;
     border-right: 1px black solid;
     max-height: 100%;
+    color: brown;
     margin: auto;
     padding:10px;
     
@@ -111,48 +129,64 @@ body{
 }
 .post-user .name{
     height: 60%;
-    font-weight:bolder;
+    color: black;
+    font-weight:10000;
+
     border-bottom: black 1px solid;
 
 }
 .post-user .time{
 height: 40%;
-font-weight: 20;
+    color: rgb(102, 7, 7);
+font-weight: 100;
 overflow: auto;
-font-size: small;
+font-size: medium;
 
 }
 .post-info{
-    height:74%;
+    height:70%;
     position: relative;
     display: flex;
     flex-direction: column;
+    
 }
 .post-info p{
     position: relative;
     overflow: hidden;
-    font-size: large;height: 70%;
+    font-size: large;
+    height: 70%;
     padding:7px 10px;
+    /* background: -webkit-linear-gradient(
+        rgba(255, 255, 255, 0) 10%,
+        rgba(255, 255, 255, 1) 100%
+    ); 
+    background-image: -moz-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -o-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -ms-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+     */
 }
-.post-info a{
-    height: 30%;
-    text-align: end;
-    padding: 10px;
-    max-width: 100%;
-    text-decoration: none;
-    /* background-color: rgba(250, 234, 211, 0.37); */
-    /* background-image: linear-gradient(white,rgba(205, 237, 247, 0.37)); */
-    cursor: pointer;
-    padding-right: 20px;
-}
+
 .fadeout{
     position: absolute; 
     bottom: 0em;
     left: 0;
     width:100%;
-    height: 5em;
+    height: 8em;
     background: -webkit-linear-gradient(
-        rgba(255, 255, 255, 0) 10%,
+        rgba(255, 255, 255, 0) 0%,
         rgba(255, 255, 255, 1) 100%
     ); 
     background-image: -moz-linear-gradient(
