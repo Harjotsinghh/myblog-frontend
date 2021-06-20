@@ -19,7 +19,7 @@ body{
     display: none;
     z-index: 11;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.521);
+    background-color: rgba(0, 0, 0, 0.63);
     margin-left: 100px;
     /* animation: ease-in-out 0.7s both 0s 2  normal; */
 }
@@ -205,4 +205,36 @@ font-size: medium;
         rgba(255, 255, 255, 0) 0%,
         rgba(255, 255, 255, 1) 100%
     );
+}
+
+.backdrop-menu{
+    position: fixed;
+    z-index: 12;
+    /* display: none; */
+    display: flex;
+    margin-top: 20%;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.backdrop-menu a{
+   
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    width: 30%;
+    font-family: 'Barlow', sans-serif;
+    padding: 20px ;
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+    border-radius: 3px;
+
+}
+.backdrop-menu  a:hover{
+    background-color: rgba(207, 197, 197, 0.568);
+    color: black;
+}
+.hide{
+    display: none;
 }
