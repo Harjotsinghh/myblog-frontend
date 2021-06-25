@@ -1,0 +1,72 @@
+.add-post{
+    margin: 100px 20px;
+    width: 90%;
+    padding:20px 20px ;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background: rgba(248, 221, 221, 0.664);
+    margin-bottom: 50px;
+}
+.post-form{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 100%;
+    
+}
+.add-post h1{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align:center ;
+}
+.post-form .input{
+    resize: none;
+    outline: none;
+    padding:7px;
+   height: 19em;
+   max-height: 30em;
+    font-family: inherit;
+    overflow: scroll;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    margin-bottom: 20px;
+}
+.post-form .title{
+    width: 50%;
+    margin: 20px 0;
+    outline: none;
+    padding:7px;
+    font-family: inherit;
+    font-size: large;
+    border: none;
+    background: white;
+}
+.post-form .img{
+    width: 50%;
+    font-family: inherit;
+    margin-bottom: 20px ;
+    font-size: large;
+    outline: none;
+    padding:7px;
+    border-radius: 5px;
+    border : none;
+
+
+}
+
+.post-form button{
+    width: 100px;
+    height: 30px;
+    margin: auto;
+    cursor: pointer;
+    background: white;
+    border: none;
+    border-radius: 3px;
+
+}
+.post-form button:hover{
+    background: rgb(72, 59, 95);
+    color: white;
+    
+}
