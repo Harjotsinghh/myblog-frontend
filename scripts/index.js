@@ -1,22 +1,4 @@
 
-var backdrop = document.querySelector(".backdrop");
-var ham= document.querySelector(".hamburger");
-var content = document.querySelector(".backdrop-menu");
-ham.addEventListener('click',()=>{
-    ham.classList.toggle("change");
-       backdrop.classList.toggle("toggle")
-      content.classList.toggle("hide");
-   
-})
-backdrop.addEventListener('click',()=>{
-    ham.classList.toggle("change");
-    backdrop.classList.toggle("toggle");    
-     content.classList.toggle("hide");
-   
-})
-
-
-
 const posts = document.querySelector(".posts");
 fetch("http://localhost:8080/")
 .then(res=>{
@@ -55,9 +37,6 @@ fetch("http://localhost:8080/")
         newele.style["bacground-color"]='rgba(86, 126, 63, 0.349)';
     newele.innerHTML=ele;
     posts.appendChild(newele);
-
-    
-   
     });
     console.log(ans);
 })

@@ -6,7 +6,7 @@ loginform.addEventListener('submit',function(e){
     const fd= new FormData(this);
    const entries = fd.entries();
    const data =Object.fromEntries(entries);
-
+   console.log(data);
  fetch("http://localhost:8080/login",{
      method:"POST",
      body:JSON.stringify(data),
@@ -14,9 +14,20 @@ loginform.addEventListener('submit',function(e){
          "Content-type":"application/json"
      }
     })
-    .then(response=> response.json())
-    .then(data=> console.log(data))
-    .catch(err=>console.log(err));
+    .then(response=> {
+       return response.json();
+    })
+    .then(data=> {
+       if(data.error){
+        console.log(data.error);
+           $('#signin-error').html(data.error);
+            
+           return;
+       }
+       sessionStorage.setItem('token', `${data.token}`);
+      
+    })
+    .catch(err=>console.log(err.message));
 
 });
 
