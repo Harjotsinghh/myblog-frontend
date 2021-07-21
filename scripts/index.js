@@ -1,17 +1,45 @@
+const loader = document.querySelector('#spinner')
+const token = sessionStorage.getItem('token');
+
+if(!token){
+    fetch('https://hsblogs.herokuapp.com/access-token', {
+        method:'GET',
+        credentials : "include",
+        mode:"cors",
+        headers:{
+         "content-type":"application/json",
+        }
+     })
+     .then(res =>{
+      return res.json();
+     })
+     .then( data=>{
+         if(data.token)
+         sessionStorage.setItem('token',`${data.token}`);
+    
+     })
+     .catch(err=>{console.log("error is :" + err)});
+     
+}
+
+
 
 const posts = document.querySelector(".posts");
-fetch("http://localhost:8080/")
+
+loader.classList.add('show');
+fetch("https://hsblogs.herokuapp.com/")
 .then(res=>{
     if(res.status!='200')
      throw new Error('error');
     return res.json()})
 .then(res=>{
+    loader.classList.remove('show')
     res.posts.map((info ,ind)=>{
         var date=info.createdAt;
         // console.log(info);
         date=date.substring(0,10);
         var ele= `
-        <a href=""><div class="post-title">
+        <a href="./post.html?${info._id}"><div class="post-title">
             <h1>${info.title}</h1>
             <div class="post-user">
                 <h3 class="name">Author: ${info.userId.username}</h3>
@@ -23,8 +51,7 @@ fetch("http://localhost:8080/")
             <p>${info.text} </p>
             <div class="fadeout"></div>
         </div>
-        </a>
-        
+        </a> 
         `;
        
 
@@ -38,7 +65,7 @@ fetch("http://localhost:8080/")
     newele.innerHTML=ele;
     posts.appendChild(newele);
     });
-    console.log(ans);
+    // console.log(ans);
 })
 .catch(err=>console.log(err));
 

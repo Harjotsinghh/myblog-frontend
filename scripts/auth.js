@@ -1,15 +1,22 @@
 var loginform = document.getElementById('login-form');
 // console.log(login);
+const loader= document.querySelector('#spinner')
+
+
+
 
 loginform.addEventListener('submit',function(e){
     e.preventDefault();
     const fd= new FormData(this);
    const entries = fd.entries();
-   const data =Object.fromEntries(entries);
-   console.log(data);
- fetch("http://localhost:8080/login",{
+   const Data =Object.fromEntries(entries);
+//    console.log(data);
+loader.classList.add('show')
+ fetch("https://hsblogs.herokuapp.com/login",{
      method:"POST",
-     body:JSON.stringify(data),
+     body:JSON.stringify(Data),
+     credentials:"include",
+     mode:'cors',
      headers:{
          "Content-type":"application/json"
      }
@@ -18,13 +25,21 @@ loginform.addEventListener('submit',function(e){
        return response.json();
     })
     .then(data=> {
+       
+        loader.classList.remove('show')
+        console.log(data);
        if(data.error){
         console.log(data.error);
            $('#signin-error').html(data.error);
-            
            return;
        }
-       sessionStorage.setItem('token', `${data.token}`);
+       else{
+        sessionStorage.removeItem('token');
+        sessionStorage.setItem('token', `${data.token}`);
+        window.location.href = '../index.html'
+       }
+
+      
       
     })
     .catch(err=>console.log(err.message));
@@ -38,8 +53,9 @@ $('#signup').submit(function(e){
    const fd= new FormData(this);
    const entries= fd.entries();
    const data= Object.fromEntries(entries);
+   loader.classList.add('show')
 //    console.log(data);
-    fetch("http://localhost:8080/signup",{
+    fetch("https://hsblogs.herokuapp.com/signup",{
         method:"POST",
         headers:{
             "content-type" :"application/json"
@@ -51,6 +67,7 @@ $('#signup').submit(function(e){
         return res.json();
     })
     .then(res=>{
+        loader.classList.remove('show')
         if(res.error)
         {
             $('#signup-error').html(res.error);

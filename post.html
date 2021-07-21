@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>My Blogs</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/post.css">
+</head>
+<body>
+    <div class="backdrop"></div>
+    <div class="backdrop-menu hide">
+        <a href="./user/addPost.html">ADD POST</a>
+        <a href="./user/myposts.html">MY POSTS</a>
+        <a id="signout" href="">SIGN OUT <i class="fa fa-sign-out" aria-hidden="true"></i>
+        </a>
+    </div>
+
+  
+    <div class="header">
+        <ul class="navbar-main"> 
+            <li><a class="navbar-link" href="index.html">MyBlogs</a> </li>  
+        </ul>
+         <a href="./forms/form.html" class="navbar-link lt">LOGIN<i class="fa fa-sign-in" aria-hidden="true"></i></a>
+         <div class="hamburger" >
+            <div class="ham1 "></div>
+            <div class="ham2 "></div>
+            <div class="ham3 "></div>
+        </div>
+    </div>
+   
+    <section class="userpost">
+        <div id="spinner"></div>
+         <!-- appending code through javascript -->
+       
+    </section>
+    <footer class="myfooter">
+        <p><span>&#169;Copyright 2021  Harjot Singh </span></p>
+        <div class="info">
+            <a  target="_blank" href="https://www.instagram.com/harjot.singh._"><i class="fa fa-instagram" style="font-size: 25px; font-weight: bolder; color: red;" aria-hidden="true"></i></a>
+            <a target="_blank" href="mailto:harjotsingh206@gmail.com"><i class="fa fa-envelope" style="font-size: 25px; font-weight: bolder; "aria-hidden="true"></i></a>
+        </div>
+    </footer>
+   
+  
+
+<script src="./scripts/backdrop.js"></script>
+<script src="./scripts/post.js"></script>
+<script src="./middlewares/signout.js"></script>
+
+</body>
+</html>
