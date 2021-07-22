@@ -43,7 +43,10 @@ function formattime( time){
 }
 
 loader.classList.add('show');
-fetch(`https://hsblogs.herokuapp.com/getpost/${query}`)
+fetch(`https://hsblogs.herokuapp.com/getpost/${query}`,{
+    credentials:"include",
+    mode:"cors"
+    })
     .then( res=> res.json())
     .then( res=> {
        loader.classList.remove('show')

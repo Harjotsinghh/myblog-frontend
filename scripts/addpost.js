@@ -1,8 +1,11 @@
 var form = document.querySelector('.post-form');
 const token = sessionStorage.getItem('token');
 
+var url1='https://hsblogs.herokuapp.com'
+var urlDev = 'http://localhost:8080'
+
 if(!token){
-    fetch('https://hsblogs.herokuapp.com/access-token', {
+    fetch(`${url1}/access-token`, {
         method:'GET',
         credentials : "include",
         mode:"cors",
@@ -11,6 +14,7 @@ if(!token){
         }
      })
      .then(res =>{
+        //  console.log(res);
       return res.json();
      })
      .then( data=>{
@@ -36,6 +40,7 @@ form.addEventListener('submit', function(e){
     fetch('https://hsblogs.herokuapp.com/admin/add-post',{
         method:"POST",
         body: JSON.stringify(data),
+        credentials:"include",
         headers:{
            "content-type":'application/json',
             authorization: `Bearer ${sessionStorage.getItem('token')}`

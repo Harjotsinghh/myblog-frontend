@@ -170,7 +170,7 @@ font-size: medium;
     height:70%;
     position: relative;
     display: flex;
-    width:100%
+    width:100%;
     flex-direction: column;
     
 }

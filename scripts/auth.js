@@ -2,7 +2,8 @@ var loginform = document.getElementById('login-form');
 // console.log(login);
 const loader= document.querySelector('#spinner')
 
-
+var url1='https://hsblogs.herokuapp.com'
+var urlDev = 'http://localhost:8080'
 
 
 loginform.addEventListener('submit',function(e){
@@ -12,7 +13,7 @@ loginform.addEventListener('submit',function(e){
    const Data =Object.fromEntries(entries);
 //    console.log(data);
 loader.classList.add('show')
- fetch("https://hsblogs.herokuapp.com/login",{
+ fetch(`${url1}/login`,{
      method:"POST",
      body:JSON.stringify(Data),
      credentials:"include",
@@ -55,8 +56,9 @@ $('#signup').submit(function(e){
    const data= Object.fromEntries(entries);
    loader.classList.add('show')
 //    console.log(data);
-    fetch("https://hsblogs.herokuapp.com/signup",{
+    fetch(`${url1}/signup`,{
         method:"POST",
+
         headers:{
             "content-type" :"application/json"
         },
@@ -73,8 +75,8 @@ $('#signup').submit(function(e){
             $('#signup-error').html(res.error);
         }
         else{
-            $('#signup-error').html('Account Created succesfully');
-            console.log(res);
+            $('#signup-error').html('Account Created succesfully')
+            window.location.href='../index.html'
             $('#signup')[0].reset();
         }
        

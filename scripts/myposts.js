@@ -15,7 +15,7 @@ if(!token){
       return res.json();
      })
      .then( data=>{
-         console.log(data)
+        //  console.log(data)
          if(data.token)
          sessionStorage.setItem('token',`${data.token}`);
     
@@ -36,6 +36,7 @@ loader.classList.add('show')
 
 fetch('https://hsblogs.herokuapp.com/admin/posts',{
     mode:'cors',
+    credentials:"include",
     headers:{
         authorization : `bearer ${sessionStorage.getItem('token')}` 
     }
@@ -98,6 +99,7 @@ fetch('https://hsblogs.herokuapp.com/admin/posts',{
 
         fetch(`https://hsblogs.herokuapp.com/admin/delete-post/${id}`,{
             method:"POST",
+            credentials:"include",
             headers:{
                 authorization : `Bearer ${sessionStorage.getItem('token')}`
             },

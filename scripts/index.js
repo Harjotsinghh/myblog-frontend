@@ -1,8 +1,11 @@
 const loader = document.querySelector('#spinner')
 const token = sessionStorage.getItem('token');
 
+var url1='https://hsblogs.herokuapp.com'
+var urlDev = 'http://localhost:8080'
+
 if(!token){
-    fetch('https://hsblogs.herokuapp.com/access-token', {
+    fetch(`${url1}/access-token`, {
         method:'GET',
         credentials : "include",
         mode:"cors",
@@ -11,9 +14,11 @@ if(!token){
         }
      })
      .then(res =>{
+        //  console.log(res)
       return res.json();
      })
      .then( data=>{
+        //  console.log(data)
          if(data.token)
          sessionStorage.setItem('token',`${data.token}`);
     
@@ -27,7 +32,11 @@ if(!token){
 const posts = document.querySelector(".posts");
 
 loader.classList.add('show');
-fetch("https://hsblogs.herokuapp.com/")
+fetch("https://hsblogs.herokuapp.com/",{
+    method:"GET",
+    mode:"cors",
+    credentials:"include"
+})
 .then(res=>{
     if(res.status!='200')
      throw new Error('error');
