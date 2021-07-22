@@ -28,7 +28,7 @@ loader.classList.add('show')
     .then(data=> {
        
         loader.classList.remove('show')
-        console.log(data);
+        // console.log(data);
        if(data.error){
         console.log(data.error);
            $('#signin-error').html(data.error);
