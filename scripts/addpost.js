@@ -29,10 +29,10 @@ if(!token){
 }
 
 
-
+const loader= document.querySelector('#spinner')
 form.addEventListener('submit', function(e){
     e.preventDefault();
-    
+    loader.classList.add('show')
     var fd = new FormData(this);
     var entries = fd.entries(fd);
     var data =Object.fromEntries(entries);
@@ -49,8 +49,10 @@ form.addEventListener('submit', function(e){
     })
     .then(res=>res.json())
     .then(res=> {
+        loader.classList.remove('show')
         if(res.token)
         sessionStorage.setItem('token',res.token)
+        window.location.href="./myposts.html"
     })
     .catch(err=>console.log(err))
 })
